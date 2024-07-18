@@ -9,7 +9,11 @@
         android:id="@+id/nav_facturas"
         android:name="com.almoapp.ui.home.HomeFragment"
         android:label="@string/facturas"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_facturas_to_seleccionCliente"
+            app:destination="@id/seleccionCliente" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_clientes"
@@ -48,4 +52,9 @@
         android:name="com.almoapp.ui.gallery.ModCliente.ModCliente"
         android:label="@string/edicion_cliente"
         tools:layout="@layout/fragment_mod_cliente" />
+    <fragment
+        android:id="@+id/seleccionCliente"
+        android:name="com.almoapp.ui.home.CrearFactura.SeleccionCliente"
+        android:label="@string/seleccion_cliente"
+        tools:layout="@layout/fragment_seleccion_cliente" />
 </navigation>
