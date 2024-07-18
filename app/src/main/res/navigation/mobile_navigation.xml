@@ -77,5 +77,9 @@
         android:id="@+id/seleccionProductos"
         android:name="com.almoapp.ui.home.CrearFactura.SeleccionProductos"
         android:label="@string/seleccion_producto"
-        tools:layout="@layout/fragment_seleccion_productos" />
+        tools:layout="@layout/fragment_seleccion_productos" >
+        <action
+            android:id="@+id/action_seleccionProductos_to_nav_facturas"
+            app:destination="@id/nav_facturas" />
+    </fragment>
 </navigation>

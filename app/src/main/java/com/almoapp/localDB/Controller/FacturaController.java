@@ -4,7 +4,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.almoapp.Models.Factura;
 import com.almoapp.localDB.DatabaseHelper;
+
+import java.util.ArrayList;
 
 public class FacturaController {
 
@@ -15,10 +18,9 @@ public class FacturaController {
     }
 
     // Create
-    public boolean insertFactura(int noFactura, String descripcion, String monto, int estado) {
+    public boolean insertFactura( String descripcion, String monto, int estado) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("noFactura", noFactura);
         values.put("descripcion", descripcion);
         values.put("monto", monto);
         values.put("estado", estado);
@@ -28,9 +30,22 @@ public class FacturaController {
     }
 
     // Read
-    public Cursor getAllFacturas() {
+    public ArrayList<Factura> getAllFacturas() {
+        ArrayList<Factura> facturaList = new ArrayList<>();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        return db.rawQuery("SELECT * FROM factura", null);
+        Cursor cursor = db.rawQuery("SELECT * FROM factura", null);
+        if (cursor.moveToFirst()) {
+            do {
+                String noFactura = cursor.getString(cursor.getColumnIndexOrThrow("noFactura"));
+                String descripcion = cursor.getString(cursor.getColumnIndexOrThrow("descripcion"));
+                String monto = cursor.getString(cursor.getColumnIndexOrThrow("monto"));
+                String estado = cursor.getString(cursor.getColumnIndexOrThrow("estado"));
+                Factura factura = new Factura(noFactura, descripcion, monto, estado);
+                facturaList.add(factura);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return facturaList;
     }
 
     public Cursor getFacturaByNoFactura(int noFactura) {

@@ -39,7 +39,7 @@ public class ProductoController {
                 int sku = cursor.getInt(cursor.getColumnIndexOrThrow("sku"));
                 String nombre = cursor.getString(cursor.getColumnIndexOrThrow("nombre"));
                 String descripcion = cursor.getString(cursor.getColumnIndexOrThrow("descripcion"));
-                String monto = cursor.getString(cursor.getColumnIndexOrThrow("monto"));
+                Double monto = cursor.getDouble(cursor.getColumnIndexOrThrow("monto"));
                 Producto producto = new Producto(sku, nombre, descripcion, monto);
                 productoList.add(producto);
             } while (cursor.moveToNext());

@@ -28,7 +28,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 ");";
 
         String createFacturaTable = "CREATE TABLE factura (" +
-                "noFactura INTEGER PRIMARY KEY," +
+                "noFactura INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "descripcion TEXT NOT NULL," +
                 "monto TEXT NOT NULL," +
                 "estado INTEGER NOT NULL DEFAULT 1" +

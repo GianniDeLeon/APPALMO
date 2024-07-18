@@ -31,10 +31,11 @@ public class FacturaAdapter extends RecyclerView.Adapter<FacturaAdapter.FacturaV
     @Override
     public void onBindViewHolder(@NonNull FacturaAdapter.FacturaViewHolder holder, int position) {
         Factura factura = facturaList.get(position);
-        holder.textViewNoFactura.setText(factura.getNoFactura());
-        holder.textViewDescripcion.setText(factura.getDescripcion());
-        holder.textViewMonto.setText(factura.getMonto());
-        holder.textViewEstado.setText(factura.getEstado());
+        holder.textViewNoFactura.setText("Numero de factura: "+factura.getNoFactura());
+        holder.textViewDescripcion.setText("Descripcion: "+factura.getDescripcion());
+        holder.textViewMonto.setText("Monto total: "+factura.getMonto());
+        String estado = (factura.getEstado().equals("1")) ? "Emitida" : "Anulada";
+        holder.textViewEstado.setText(estado);
     }
 
     @Override

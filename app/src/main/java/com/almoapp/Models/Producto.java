@@ -5,7 +5,7 @@ import android.os.Parcelable;
 public class Producto implements Parcelable {
     private String nombre;
     private String descripcion;
-    private String monto;
+    private double monto;
     private int sku;
 
     public int getSku() {
@@ -16,12 +16,12 @@ public class Producto implements Parcelable {
         this.sku = sku;
     }
 
-    public Producto(String nombre, String descripcion, String monto) {
+    public Producto(String nombre, String descripcion, double monto) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.monto = monto;
     }
-    public Producto(int sku,String nombre, String descripcion, String monto) {
+    public Producto(int sku,String nombre, String descripcion, double monto) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.monto = monto;
@@ -78,7 +78,7 @@ public class Producto implements Parcelable {
         this.descripcion = descripcion;
     }
 
-    public void setMonto(String monto) {
+    public void setMonto(Double monto) {
         this.monto = monto;
     }
 }

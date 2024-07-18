@@ -46,7 +46,7 @@ public class ModProducto extends Fragment {
             this.producto = getArguments().getParcelable("producto");
             editTextTextNombreProducto.setText(producto.getNombre());
             editTextDescripcionProducto.setText(producto.getDescripcion());
-            editTextNumberDecimalMontoProducto.setText(producto.getMonto());
+            editTextNumberDecimalMontoProducto.setText(producto.getMonto()+"");
 
             buttonGuardarProducto.setOnClickListener(v -> actualizarProducto(producto,v));
             buttonEliminarProducto.setOnClickListener(v -> eliminarCliente(producto,v));
@@ -65,7 +65,7 @@ public class ModProducto extends Fragment {
     private void nuevoProducto(View v){
         Producto producto = validarDatos();
         if (producto != null){
-            productoController.insertProducto(producto.getNombre(),producto.getDescripcion(),Double.parseDouble(producto.getMonto()));
+            productoController.insertProducto(producto.getNombre(),producto.getDescripcion(),Double.parseDouble(producto.getMonto()+""));
             goToListaProductos(v);
         }
     }
@@ -73,7 +73,7 @@ public class ModProducto extends Fragment {
     private void actualizarProducto(Producto producto, View v){
         producto = validarDatos(producto);
         if (producto != null){
-            productoController.updateProducto(producto.getSku(),producto.getNombre(),producto.getDescripcion(),Double.parseDouble(producto.getMonto()));
+            productoController.updateProducto(producto.getSku(),producto.getNombre(),producto.getDescripcion(),producto.getMonto());
             goToListaProductos(v);
         }
     }
@@ -93,7 +93,7 @@ public class ModProducto extends Fragment {
         }
         producto.setNombre(editTextTextNombreProducto.getText().toString());
         producto.setDescripcion(editTextDescripcionProducto.getText().toString());
-        producto.setMonto(editTextNumberDecimalMontoProducto.getText().toString());
+        producto.setMonto(Double.parseDouble(editTextNumberDecimalMontoProducto.getText().toString()));
         return producto;
     }
 
@@ -110,7 +110,7 @@ public class ModProducto extends Fragment {
             Toast.makeText(getContext(),"El monto no puede estar vacio",Toast.LENGTH_SHORT).show();
             return null;
         }
-        return new Producto(editTextTextNombreProducto.getText().toString(),editTextDescripcionProducto.getText().toString(),editTextNumberDecimalMontoProducto.getText().toString());
+        return new Producto(editTextTextNombreProducto.getText().toString(),editTextDescripcionProducto.getText().toString(),Double.parseDouble(editTextNumberDecimalMontoProducto.getText().toString()));
     }
 
     private void goToListaProductos(View v){
