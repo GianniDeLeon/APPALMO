@@ -9,12 +9,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.almoapp.databinding.FragmentGalleryBinding;
+import com.almoapp.ui.gallery.Adapter.ClienteAdapter;
 
 public class GalleryFragment extends Fragment {
 
     private FragmentGalleryBinding binding;
+    private ClienteAdapter clienteAdapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -24,8 +28,11 @@ public class GalleryFragment extends Fragment {
         binding = FragmentGalleryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textGallery;
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        clienteAdapter = new ClienteAdapter(galleryViewModel.getClienteList().getValue());
+        RecyclerView recyclerViewClientes = binding.recyclerViewClientes;
+        recyclerViewClientes.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerViewClientes.setAdapter(clienteAdapter);
+
         return root;
     }
 
