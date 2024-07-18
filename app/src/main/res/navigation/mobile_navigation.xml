@@ -56,5 +56,18 @@
         android:id="@+id/seleccionCliente"
         android:name="com.almoapp.ui.home.CrearFactura.SeleccionCliente"
         android:label="@string/seleccion_cliente"
-        tools:layout="@layout/fragment_seleccion_cliente" />
+        tools:layout="@layout/fragment_seleccion_cliente" >
+        <action
+            android:id="@+id/action_seleccionCliente_to_seleccionProductos"
+            app:destination="@id/seleccionProductos" />
+        <argument
+            android:name="cliente"
+            app:argType="com.almoapp.Models.Cliente"
+            app:nullable="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/seleccionProductos"
+        android:name="com.almoapp.ui.home.CrearFactura.SeleccionProductos"
+        android:label="@string/seleccion_producto"
+        tools:layout="@layout/fragment_seleccion_productos" />
 </navigation>
