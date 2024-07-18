@@ -1,11 +1,15 @@
 package com.almoapp.ui.gallery.Adapter;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.almoapp.Models.Cliente;
@@ -35,6 +39,14 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.ClienteV
         holder.textViewNombre.setText(cliente.getNombre());
         holder.textViewNit.setText(cliente.getNit());
         holder.textViewDireccion.setText(cliente.getDireccion());
+        holder.constraintLayoutCliente.setOnClickListener(v -> goToModCliente(cliente,v));
+    }
+
+    private void goToModCliente(Cliente cliente, View v){
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("cliente", cliente);
+        NavController navController = Navigation.findNavController(v);
+        navController.navigate(R.id.action_nav_clientes_to_modCliente,bundle);
     }
 
     @Override
@@ -44,12 +56,14 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.ClienteV
 
     public static class ClienteViewHolder extends RecyclerView.ViewHolder {
         public TextView textViewNombre, textViewNit, textViewDireccion;
+        private ConstraintLayout constraintLayoutCliente;
 
         public ClienteViewHolder(@NonNull View itemView) {
             super(itemView);
             textViewNombre = itemView.findViewById(R.id.textViewNombre);
             textViewNit = itemView.findViewById(R.id.textViewNit);
             textViewDireccion = itemView.findViewById(R.id.textViewDireccion);
+            constraintLayoutCliente = itemView.findViewById(R.id.constraintLayoutCliente);
         }
     }
 }

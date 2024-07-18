@@ -17,7 +17,6 @@
     <string name="clientes">Clientes</string>
     <string name="productos">Productos</string>
     <string name="nueva_factura">Nueva factura</string>
-    <string name="nuevo_cliente">Nuevo cliente</string>
     <!-- string relacionados con producto -->
     <string name="nuevo_producto">Nuevo producto</string>
     <string name="edicion_producto">Edicion de producto</string>
@@ -25,7 +24,16 @@
     <string name="descripcion_producto">Descripcion del producto</string>
     <string name="costo_producto">Costo/Monto del producto</string>
 
+    <!-- string relacionados con producto -->
+    <string name="nuevo_cliente">Nuevo cliente</string>
+    <string name="edicion_cliente">Edicion de cliente</string>
+    <string name="nombre_cliente">Nombre del cliente</string>
+    <string name="direccion_cliente">Direccion del cliente</string>
+    <string name="nit">NIT del cliente</string>
+
     <!-- botones de control -->
     <string name="guardar_cambios">Guardar cambios</string>
-    <string name="eliminar_elemento">Eliminar Elemento</string>
+    <string name="eliminar_elemento">Eliminar elemento</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

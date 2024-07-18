@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.gallery.ModCliente.ModCliente">
+
+    <TextView
+        android:id="@+id/textViewTituloCliente"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/edicion_cliente"
+        android:textAlignment="center"
+        android:textColor="#3F51B5"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/nombre_cliente"
+        app:layout_constraintEnd_toEndOf="@+id/textViewTituloCliente"
+        app:layout_constraintStart_toStartOf="@+id/textViewTituloCliente"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTituloCliente" />
+
+    <EditText
+        android:id="@+id/editTextTextNombreCliente"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="@string/nombre_cliente"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/direccion_cliente"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextNombreCliente"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextNombreCliente"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextNombreCliente" />
+
+    <EditText
+        android:id="@+id/editTextDireccionCliente"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="@string/direccion_cliente"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/nit"
+        app:layout_constraintEnd_toEndOf="@+id/editTextDireccionCliente"
+        app:layout_constraintStart_toStartOf="@+id/editTextDireccionCliente"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDireccionCliente" />
+
+    <EditText
+        android:id="@+id/editTextNumberNit"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:hint="@string/nit"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <Button
+        android:id="@+id/buttonGuardarProducto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/blue_almo"
+        android:text="@string/guardar_cambios"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonEliminarProducto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/red_almo"
+        android:text="@string/eliminar_elemento"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/buttonGuardarProducto"
+        app:layout_constraintEnd_toEndOf="@+id/buttonGuardarProducto"
+        app:layout_constraintStart_toStartOf="@+id/buttonGuardarProducto" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
