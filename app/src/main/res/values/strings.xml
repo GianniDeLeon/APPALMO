@@ -10,4 +10,6 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="olvido_su_contraseña">Olvido su contraseña</string>
+    <string name="ingresar">Ingresar</string>
 </resources>
