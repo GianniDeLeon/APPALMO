@@ -39,4 +39,7 @@
     <string name="guardar_cambios">Guardar cambios</string>
     <string name="eliminar_elemento">Eliminar elemento</string>
     <string name="siguiente">Siguiente</string>
+    <string name="anular_factura">Anular factura</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

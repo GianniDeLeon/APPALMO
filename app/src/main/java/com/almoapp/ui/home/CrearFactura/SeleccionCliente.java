@@ -12,37 +12,23 @@ import android.view.ViewGroup;
 
 import com.almoapp.Models.Cliente;
 import com.almoapp.R;
+import com.almoapp.localDB.Controller.ClientController;
 import com.almoapp.ui.gallery.Adapter.ClienteAdapter;
 
 import java.util.ArrayList;
 
 public class SeleccionCliente extends Fragment {
 
+    ClientController clientController;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_seleccion_cliente, container, false);
+        clientController = new ClientController(getContext());
         RecyclerView recyclerViewSeleccionCliente = view.findViewById(R.id.recyclerViewSeleccionCliente);
-        ClienteAdapter clienteAdapter = new ClienteAdapter(getClientes(),true);
+        ClienteAdapter clienteAdapter = new ClienteAdapter(clientController.getAllClientes(),true);
         recyclerViewSeleccionCliente.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerViewSeleccionCliente.setAdapter(clienteAdapter);
         return view;
-    }
-
-    private ArrayList<Cliente> getClientes(){
-        ArrayList<Cliente> clienteList = new ArrayList<>();
-        clienteList.add(new Cliente("Gianni Artemio De Leon Chacon", "101923368", "Ciudad"));
-        clienteList.add(new Cliente("Kimberly Shanel Hernandez Mendez", "19281382", "Alotenango"));
-        clienteList.add(new Cliente("Juan Pablo Ozuna De Leon", "201503823", "Ciudad"));
-        clienteList.add(new Cliente("Gianni Artemio De Leon Chacon", "101923368", "Ciudad"));
-        clienteList.add(new Cliente("Kimberly Shanel Hernandez Mendez", "19281382", "Alotenango"));
-        clienteList.add(new Cliente("Juan Pablo Ozuna De Leon", "201503823", "Ciudad"));
-        clienteList.add(new Cliente("Gianni Artemio De Leon Chacon", "101923368", "Ciudad"));
-        clienteList.add(new Cliente("Kimberly Shanel Hernandez Mendez", "19281382", "Alotenango"));
-        clienteList.add(new Cliente("Juan Pablo Ozuna De Leon", "201503823", "Ciudad"));
-        clienteList.add(new Cliente("Gianni Artemio De Leon Chacon", "101923368", "Ciudad"));
-        clienteList.add(new Cliente("Kimberly Shanel Hernandez Mendez", "19281382", "Alotenango"));
-        clienteList.add(new Cliente("Juan Pablo Ozuna De Leon", "201503823", "Ciudad"));
-        return clienteList;
     }
 }

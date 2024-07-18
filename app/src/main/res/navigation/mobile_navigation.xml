@@ -13,6 +13,13 @@
         <action
             android:id="@+id/action_nav_facturas_to_seleccionCliente"
             app:destination="@id/seleccionCliente" />
+        <action
+            android:id="@+id/action_nav_facturas_to_modFactura"
+            app:destination="@id/modFactura" />
+        <argument
+            android:name="factura"
+            app:argType="com.almoapp.Models.Factura"
+            app:nullable="false" />
     </fragment>
 
     <fragment
@@ -46,12 +53,20 @@
         android:id="@+id/modProducto"
         android:name="com.almoapp.ui.slideshow.ModProducto.ModProducto"
         android:label="@string/edicion_producto"
-        tools:layout="@layout/fragment_mod_producto" />
+        tools:layout="@layout/fragment_mod_producto" >
+        <action
+            android:id="@+id/action_modProducto_to_nav_productos"
+            app:destination="@id/nav_productos" />
+    </fragment>
     <fragment
         android:id="@+id/modCliente"
         android:name="com.almoapp.ui.gallery.ModCliente.ModCliente"
         android:label="@string/edicion_cliente"
-        tools:layout="@layout/fragment_mod_cliente" />
+        tools:layout="@layout/fragment_mod_cliente" >
+        <action
+            android:id="@+id/action_modCliente_to_nav_clientes"
+            app:destination="@id/nav_clientes" />
+    </fragment>
     <fragment
         android:id="@+id/seleccionCliente"
         android:name="com.almoapp.ui.home.CrearFactura.SeleccionCliente"
@@ -69,5 +84,18 @@
         android:id="@+id/seleccionProductos"
         android:name="com.almoapp.ui.home.CrearFactura.SeleccionProductos"
         android:label="@string/seleccion_producto"
-        tools:layout="@layout/fragment_seleccion_productos" />
+        tools:layout="@layout/fragment_seleccion_productos" >
+        <action
+            android:id="@+id/action_seleccionProductos_to_nav_facturas"
+            app:destination="@id/nav_facturas" />
+    </fragment>
+    <fragment
+        android:id="@+id/modFactura"
+        android:name="com.almoapp.ui.home.ModFactura.ModFactura"
+        android:label="@string/anular_factura"
+        tools:layout="@layout/fragment_mod_factura" >
+        <action
+            android:id="@+id/action_modFactura_to_nav_facturas"
+            app:destination="@id/nav_facturas" />
+    </fragment>
 </navigation>

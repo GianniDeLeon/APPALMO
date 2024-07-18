@@ -6,11 +6,26 @@ public class Producto implements Parcelable {
     private String nombre;
     private String descripcion;
     private double monto;
+    private int sku;
+
+    public int getSku() {
+        return sku;
+    }
+
+    public void setSku(int sku) {
+        this.sku = sku;
+    }
 
     public Producto(String nombre, String descripcion, double monto) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.monto = monto;
+    }
+    public Producto(int sku,String nombre, String descripcion, double monto) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.monto = monto;
+        this.sku = sku;
     }
 
     protected Producto(Parcel in) {
@@ -53,5 +68,17 @@ public class Producto implements Parcelable {
 
     public double getMonto() {
         return monto;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setMonto(Double monto) {
+        this.monto = monto;
     }
 }
