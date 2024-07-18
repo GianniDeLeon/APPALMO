@@ -4,7 +4,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.almoapp.Models.Producto;
 import com.almoapp.localDB.DatabaseHelper;
+
+import java.util.ArrayList;
 
 public class ProductoController {
 
@@ -15,10 +18,9 @@ public class ProductoController {
     }
 
     // Create
-    public boolean insertProducto(int sku, String nombre, String descripcion, double monto) {
+    public boolean insertProducto(String nombre, String descripcion, double monto) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("sku", sku);
         values.put("nombre", nombre);
         values.put("descripcion", descripcion);
         values.put("monto", monto);
@@ -28,9 +30,22 @@ public class ProductoController {
     }
 
     // Read
-    public Cursor getAllProductos() {
+    public ArrayList<Producto> getAllProductos() {
+        ArrayList<Producto> productoList = new ArrayList<>();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        return db.rawQuery("SELECT * FROM producto", null);
+        Cursor cursor = db.rawQuery("SELECT * FROM producto", null);
+        if (cursor.moveToFirst()) {
+            do {
+                int sku = cursor.getInt(cursor.getColumnIndexOrThrow("sku"));
+                String nombre = cursor.getString(cursor.getColumnIndexOrThrow("nombre"));
+                String descripcion = cursor.getString(cursor.getColumnIndexOrThrow("descripcion"));
+                String monto = cursor.getString(cursor.getColumnIndexOrThrow("monto"));
+                Producto producto = new Producto(sku, nombre, descripcion, monto);
+                productoList.add(producto);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return productoList;
     }
 
     public Cursor getProductoBySku(int sku) {

@@ -46,7 +46,11 @@
         android:id="@+id/modProducto"
         android:name="com.almoapp.ui.slideshow.ModProducto.ModProducto"
         android:label="@string/edicion_producto"
-        tools:layout="@layout/fragment_mod_producto" />
+        tools:layout="@layout/fragment_mod_producto" >
+        <action
+            android:id="@+id/action_modProducto_to_nav_productos"
+            app:destination="@id/nav_productos" />
+    </fragment>
     <fragment
         android:id="@+id/modCliente"
         android:name="com.almoapp.ui.gallery.ModCliente.ModCliente"

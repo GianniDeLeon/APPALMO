@@ -21,7 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 ");";
 
         String createProductoTable = "CREATE TABLE producto (" +
-                "sku INTEGER PRIMARY KEY," +
+                "sku INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "nombre TEXT NOT NULL," +
                 "descripcion TEXT NOT NULL," +
                 "monto REAL NOT NULL" +
