@@ -20,9 +20,15 @@ import java.util.List;
 public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.ClienteViewHolder> {
 
     private List<Cliente> clienteList;
+    private boolean goToSeleccionProducto;
 
     public ClienteAdapter(List<Cliente> clienteList) {
         this.clienteList = clienteList;
+        this.goToSeleccionProducto = false;
+    }
+    public ClienteAdapter(List<Cliente> clienteList, boolean goToSeleccionProducto) {
+        this.clienteList = clienteList;
+        this.goToSeleccionProducto = goToSeleccionProducto;
     }
 
     @NonNull
@@ -39,7 +45,13 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.ClienteV
         holder.textViewNombre.setText(cliente.getNombre());
         holder.textViewNit.setText(cliente.getNit());
         holder.textViewDireccion.setText(cliente.getDireccion());
-        holder.constraintLayoutCliente.setOnClickListener(v -> goToModCliente(cliente,v));
+        holder.constraintLayoutCliente.setOnClickListener(v -> {
+            if (goToSeleccionProducto){
+                goToSeleccionProducto(cliente,v);
+            }else {
+                goToModCliente(cliente,v);
+            }
+        });
     }
 
     private void goToModCliente(Cliente cliente, View v){
@@ -47,6 +59,13 @@ public class ClienteAdapter extends RecyclerView.Adapter<ClienteAdapter.ClienteV
         bundle.putParcelable("cliente", cliente);
         NavController navController = Navigation.findNavController(v);
         navController.navigate(R.id.action_nav_clientes_to_modCliente,bundle);
+    }
+
+    private void goToSeleccionProducto(Cliente cliente, View v){
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("cliente", cliente);
+        NavController navController = Navigation.findNavController(v);
+        navController.navigate(R.id.action_seleccionCliente_to_seleccionProductos,bundle);
     }
 
     @Override
