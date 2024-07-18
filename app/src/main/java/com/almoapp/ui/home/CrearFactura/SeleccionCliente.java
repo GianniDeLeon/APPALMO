@@ -23,7 +23,7 @@ public class SeleccionCliente extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_seleccion_cliente, container, false);
         RecyclerView recyclerViewSeleccionCliente = view.findViewById(R.id.recyclerViewSeleccionCliente);
-        ClienteAdapter clienteAdapter = new ClienteAdapter(getClientes());
+        ClienteAdapter clienteAdapter = new ClienteAdapter(getClientes(),true);
         recyclerViewSeleccionCliente.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerViewSeleccionCliente.setAdapter(clienteAdapter);
         return view;

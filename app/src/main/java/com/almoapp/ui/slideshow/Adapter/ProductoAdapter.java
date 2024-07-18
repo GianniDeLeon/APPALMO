@@ -38,7 +38,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
         Producto producto = productoList.get(position);
         holder.textViewNombreProducto.setText(producto.getNombre());
         holder.textViewDescripcionProducto.setText(producto.getDescripcion());
-        holder.textViewMontoProducto.setText(producto.getMonto());
+        holder.textViewMontoProducto.setText(producto.getMonto()+"");
         holder.constraintLayoutProducto.setOnClickListener(v -> goToProductoMod(producto,v));
     }
 

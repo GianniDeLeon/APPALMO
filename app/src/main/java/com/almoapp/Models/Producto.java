@@ -5,9 +5,9 @@ import android.os.Parcelable;
 public class Producto implements Parcelable {
     private String nombre;
     private String descripcion;
-    private String monto;
+    private double monto;
 
-    public Producto(String nombre, String descripcion, String monto) {
+    public Producto(String nombre, String descripcion, double monto) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.monto = monto;
@@ -16,7 +16,7 @@ public class Producto implements Parcelable {
     protected Producto(Parcel in) {
         nombre = in.readString();
         descripcion = in.readString();
-        monto = in.readString();
+        monto = in.readDouble();
     }
 
     public static final Creator<Producto> CREATOR = new Creator<Producto>() {
@@ -40,7 +40,7 @@ public class Producto implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(nombre);
         dest.writeString(descripcion);
-        dest.writeString(monto);
+        dest.writeDouble(monto);
     }
 
     public String getNombre() {
@@ -51,7 +51,7 @@ public class Producto implements Parcelable {
         return descripcion;
     }
 
-    public String getMonto() {
+    public double getMonto() {
         return monto;
     }
 }

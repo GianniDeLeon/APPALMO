@@ -34,7 +34,7 @@ public class ModProducto extends Fragment {
             editTextDescripcionProducto = view.findViewById(R.id.editTextDescripcionProducto);
             editTextDescripcionProducto.setText(producto.getDescripcion());
             editTextNumberDecimalMontoProducto = view.findViewById(R.id.editTextNumberDecimalMontoProducto);
-            editTextNumberDecimalMontoProducto.setText(producto.getMonto());
+            editTextNumberDecimalMontoProducto.setText(producto.getMonto()+"");
         }
         return view;
     }

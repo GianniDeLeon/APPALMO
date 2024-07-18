@@ -27,11 +27,11 @@ public class SlideshowViewModel extends ViewModel {
         productoList = new MutableLiveData<>();
 
         ArrayList<Producto> productoListTmp = new ArrayList<>();
-        productoListTmp.add(new Producto("MacBook Pro M1 16\"", "Procesador M1 Pro, 16GB de RAM, 32 núcleos de alto rendimiento, 32 núcleos de procesamiento gráfico", "Q29,990.00"));
-        productoListTmp.add(new Producto("MacBook Pro M2 16\"", "Procesador M2 , 16GB de RAM, 32 núcleos de alto rendimiento, 32 núcleos de procesamiento gráfico", "Q39,990.00"));
-        productoListTmp.add(new Producto("MacBook Pro M3 16\"", "Procesador M3 Pro, 16GB de RAM, 32 núcleos de alto rendimiento, 32 núcleos de procesamiento gráfico", "Q49,990.00"));
-        productoListTmp.add(new Producto("MacBook Pro M4 16\"", "Procesador M4, 16GB de RAM, 32 núcleos de alto rendimiento, 32 núcleos de procesamiento gráfico", "Q19,990.00"));
-        productoListTmp.add(new Producto("MacBook Pro M1 16\"", "Procesador M1 MAX, 16GB de RAM, 32 núcleos de alto rendimiento, 32 núcleos de procesamiento gráfico", "Q9,990.00"));
+        productoListTmp.add(new Producto("MacBook Pro M1 16\"", "Procesador M1 Pro, 16GB de RAM, 32 núcleos de alto rendimiento, 32 núcleos de procesamiento gráfico", 29990.44));
+        productoListTmp.add(new Producto("MacBook Pro M2 16\"", "Procesador M2 , 16GB de RAM, 32 núcleos de alto rendimiento, 32 núcleos de procesamiento gráfico", 39990.00));
+        productoListTmp.add(new Producto("MacBook Pro M3 16\"", "Procesador M3 Pro, 16GB de RAM, 32 núcleos de alto rendimiento, 32 núcleos de procesamiento gráfico", 49990.00));
+        productoListTmp.add(new Producto("MacBook Pro M4 16\"", "Procesador M4, 16GB de RAM, 32 núcleos de alto rendimiento, 32 núcleos de procesamiento gráfico", 19990.33));
+        productoListTmp.add(new Producto("MacBook Pro M1 16\"", "Procesador M1 MAX, 16GB de RAM, 32 núcleos de alto rendimiento, 32 núcleos de procesamiento gráfico", 9990.04));
 
 
         productoList.setValue(productoListTmp);
