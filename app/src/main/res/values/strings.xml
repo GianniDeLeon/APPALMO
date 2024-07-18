@@ -18,5 +18,14 @@
     <string name="productos">Productos</string>
     <string name="nueva_factura">Nueva factura</string>
     <string name="nuevo_cliente">Nuevo cliente</string>
+    <!-- string relacionados con producto -->
     <string name="nuevo_producto">Nuevo producto</string>
+    <string name="edicion_producto">Edicion de producto</string>
+    <string name="nombre_producto">Nombre del producto</string>
+    <string name="descripcion_producto">Descripcion del producto</string>
+    <string name="costo_producto">Costo/Monto del producto</string>
+
+    <!-- botones de control -->
+    <string name="guardar_cambios">Guardar cambios</string>
+    <string name="eliminar_elemento">Eliminar Elemento</string>
 </resources>

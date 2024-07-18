@@ -21,5 +21,18 @@
         android:id="@+id/nav_productos"
         android:name="com.almoapp.ui.slideshow.SlideshowFragment"
         android:label="@string/productos"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_slideshow" >
+        <action
+            android:id="@+id/action_nav_productos_to_modProducto"
+            app:destination="@id/modProducto" />
+        <argument
+            android:name="producto"
+            app:argType="com.almoapp.Models.Producto"
+            app:nullable="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/modProducto"
+        android:name="com.almoapp.ui.slideshow.ModProducto.ModProducto"
+        android:label="@string/edicion_producto"
+        tools:layout="@layout/fragment_mod_producto" />
 </navigation>
