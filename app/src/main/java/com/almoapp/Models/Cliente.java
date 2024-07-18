@@ -3,6 +3,14 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Cliente implements Parcelable {
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
     private String nombre;
     private String nit;
     private String direccion;

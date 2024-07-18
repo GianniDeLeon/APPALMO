@@ -4,7 +4,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.almoapp.Models.Cliente;
 import com.almoapp.localDB.DatabaseHelper;
+
+import java.util.ArrayList;
 
 public class ClientController {
     private DatabaseHelper dbHelper;
@@ -25,10 +28,22 @@ public class ClientController {
         return result != -1;
     }
 
-    // Read
-    public Cursor getAllClientes() {
+    // Read all clientes
+    public ArrayList<Cliente> getAllClientes() {
+        ArrayList<Cliente> clienteList = new ArrayList<>();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        return db.rawQuery("SELECT * FROM cliente", null);
+        Cursor cursor = db.rawQuery("SELECT * FROM cliente", null);
+        if (cursor.moveToFirst()) {
+            do {
+                int nit = cursor.getInt(cursor.getColumnIndexOrThrow("nit"));
+                String nombre = cursor.getString(cursor.getColumnIndexOrThrow("nombre"));
+                String direccion = cursor.getString(cursor.getColumnIndexOrThrow("direccion"));
+                Cliente cliente = new Cliente(nombre, nit+"", direccion);
+                clienteList.add(cliente);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return clienteList;
     }
 
     public Cursor getClienteByNit(int nit) {

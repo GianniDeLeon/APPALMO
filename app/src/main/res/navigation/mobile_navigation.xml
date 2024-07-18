@@ -51,7 +51,11 @@
         android:id="@+id/modCliente"
         android:name="com.almoapp.ui.gallery.ModCliente.ModCliente"
         android:label="@string/edicion_cliente"
-        tools:layout="@layout/fragment_mod_cliente" />
+        tools:layout="@layout/fragment_mod_cliente" >
+        <action
+            android:id="@+id/action_modCliente_to_nav_clientes"
+            app:destination="@id/nav_clientes" />
+    </fragment>
     <fragment
         android:id="@+id/seleccionCliente"
         android:name="com.almoapp.ui.home.CrearFactura.SeleccionCliente"

@@ -92,7 +92,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <Button
-        android:id="@+id/buttonGuardarProducto"
+        android:id="@+id/buttonGuardarCliente"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -106,15 +106,15 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/buttonEliminarProducto"
+        android:id="@+id/buttonEliminarCliente"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/red_almo"
         android:text="@string/eliminar_elemento"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@+id/buttonGuardarProducto"
-        app:layout_constraintEnd_toEndOf="@+id/buttonGuardarProducto"
-        app:layout_constraintStart_toStartOf="@+id/buttonGuardarProducto" />
+        app:layout_constraintBottom_toTopOf="@+id/buttonGuardarCliente"
+        app:layout_constraintEnd_toEndOf="@+id/buttonGuardarCliente"
+        app:layout_constraintStart_toStartOf="@+id/buttonGuardarCliente" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
