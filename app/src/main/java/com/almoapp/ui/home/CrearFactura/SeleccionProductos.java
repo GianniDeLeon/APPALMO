@@ -65,10 +65,9 @@ public class SeleccionProductos extends Fragment {
             }
         }
         String formattedValue = String.format("%.2f", montoTotal);
-        double roundedValue = Double.parseDouble(formattedValue);
-        descripcion += "\nTotal de la venta: " + roundedValue;
+        descripcion += "\nTotal de la venta: " + formattedValue;
         System.out.println(descripcion);
-        facturaController.insertFactura(descripcion,roundedValue+"",1);
+        facturaController.insertFactura(descripcion,formattedValue,1);
         goToListaFacturas(v);
     }
 
