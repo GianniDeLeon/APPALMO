@@ -9,12 +9,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.almoapp.databinding.FragmentSlideshowBinding;
+import com.almoapp.ui.slideshow.Adapter.ProductoAdapter;
 
 public class SlideshowFragment extends Fragment {
 
     private FragmentSlideshowBinding binding;
+    private ProductoAdapter productoAdapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -24,8 +28,10 @@ public class SlideshowFragment extends Fragment {
         binding = FragmentSlideshowBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSlideshow;
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        RecyclerView recyclerViewProductos = binding.recyclerViewProductos;
+        recyclerViewProductos.setLayoutManager(new LinearLayoutManager(getContext()));
+        productoAdapter = new ProductoAdapter(slideshowViewModel.getProductoList().getValue());
+        recyclerViewProductos.setAdapter(productoAdapter);
         return root;
     }
 
