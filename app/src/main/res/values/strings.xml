@@ -12,4 +12,9 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="olvido_su_contraseña">Olvido su contraseña</string>
     <string name="ingresar">Ingresar</string>
+    <string name="facturas">Facturas</string>
+    <string name="usuarios">Usuarios</string>
+    <string name="clientes">Clientes</string>
+    <string name="productos">Productos</string>
+    <string name="nueva_factura">Nueva factura</string>
 </resources>
