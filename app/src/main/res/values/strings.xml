@@ -17,4 +17,5 @@
     <string name="clientes">Clientes</string>
     <string name="productos">Productos</string>
     <string name="nueva_factura">Nueva factura</string>
+    <string name="nuevo_cliente">Nuevo cliente</string>
 </resources>
